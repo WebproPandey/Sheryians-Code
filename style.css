@@ -1,0 +1,775 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Montserrat+Alternates:wght@600&family=Noto+Sans+Pahawh+Hmong&family=Poppins:ital,wght@0,400;0,900;1,100;1,800;1,900&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+#loader {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+}
+
+#loader #box {
+    width: 20%;
+    height: 20%;
+    /* background: white; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: relative;
+}
+
+#loader #box img {
+    width: 60%;
+    height: 40%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+#loader #box .persent {
+    color: white;
+}
+
+#loader #box .progress-bar {
+    position: relative;
+    top: -65%;
+    left: 30%;
+    transform: translate(-25%, 0%);
+    width: 145%;
+    height: 0.12px;
+    /* background-color: white; */
+    border-radius: 13px;
+    /* background-color:red; */
+
+}
+
+#loader #box .progress-bar .progress {
+    height: 1px;
+    /* width:0.10px; */
+    border-radius: 50px;
+    background: linear-gradient(45deg, blue, orange);
+}
+
+#loader .btn {
+    display: none;
+    height: 40px;
+    width: 150px;
+    padding: 14px 8px;
+    border-radius: 5px;
+    transition: all ease-in-out 1s;
+}
+
+#loader .btn h4 {
+    font-size: 10px;
+    font-weight: 900;
+    color: gray;
+    margin-bottom: 20px;
+    margin-left: 12px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    transition: all ease 0.5s;
+}
+
+#loader .btn .line {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transition: all ease 0.s;
+}
+
+#loader .btn:hover h4 {
+    color: white;
+}
+
+#loader .btn:hover .line {
+    background-color: gray;
+}
+
+#loader .btn:hover {
+    border: 1px solid white;
+}
+
+#mainbox {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: relative;
+}
+
+#mainbox .navbar {
+    height: 20vh;
+    width: 100vw;
+    position: absolute;
+    top: 20%;
+    pointer-events: none;
+
+
+}
+
+#mainbox .navbar .mid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+    margin: 0 auto;
+}
+
+#mainbox .navbar .mid .line {
+    height: 3px;
+    width: 50px;
+    border-radius: 12px;
+    background-color: white;
+    margin-bottom: 5px;
+
+}
+
+#mainbox .navbar .mid .line:nth-child(1) {
+    width: 30px;
+}
+
+#mainbox .navbar .mid .line:nth-child(2) {
+    width: 40px;
+}
+
+#mainbox .navbar .mid .text {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: gray;
+    font-family: 'Iceberg', sans-serif;
+
+}
+
+#mainbox .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    /* background-color: rgba(0, 0,0,0.45); */
+    position: absolute;
+    top: 10%;
+
+}
+
+#mainbox .overlay .imgtext {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    height: 30vh;
+    width: 50%;
+    margin-top: 2%;
+    position: relative;
+}
+
+#mainbox .overlay .imgtext .shadow1 {
+    height: 70%;
+    width: 100%;
+    /* border-radius: 50%; */
+    background: black;
+    animation: glitch 3s linear infinite;
+    position: absolute;
+
+}
+
+@keyframes glitch {
+
+    11%,
+    14% {
+        clip-path: polygon(100% 0, 0 18%, 99% 46%, 0 78%, 100% 100%, 100% 57%, 0 100%, 100% 76%, 0 59%, 100% 35%, 0 37%, 100% 21%);
+    }
+
+    12%,
+    16% {
+        clip-path: polygon(0 51%, 0 29%, 100% 0, 0 14%, 99% 57%, 100% 23%, 0 100%, 100% 72%, 0 0, 100% 100%);
+    }
+
+    13%,
+    17% {
+        clip-path: polygon(0% 0%, 99% 0%, 99% 8%, 0% 7%, 0% 14%, 99% 15%, 100% 22%, 0% 22%, 0% 30%, 99% 30%, 99% 39%, 0% 37%, 0% 43%, 100% 45%, 100% 50%, 0% 49%, 0% 56%, 99% 57%, 99% 63%, 0% 63%, 0% 68%, 99% 68%, 99% 75%, 0% 76%, 0% 81%, 100% 83%, 100% 89%, 0% 88%, 0% 94%, 100% 95%, 100% 100%, 0% 99%);
+    }
+
+}
+
+
+#mainbox .overlay .imgtext img {
+    height: 70%;
+    width: 90%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#mainbox .overlay .fotter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30vh;
+    width: 100%;
+    position: fixed;
+    bottom: 5%;
+    z-index: 9;
+
+}
+
+#mainbox .overlay .fotter .left,
+.mids,
+.right {
+    height: 80%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+    padding-bottom: 10px;
+}
+
+.fotter .mids {
+    justify-content: center;
+}
+
+#mainbox .overlay .fotter .left .up,
+.down {
+    height: 20px;
+    width: 75%;
+    white-space: nowrap;
+}
+
+.overlay .fotter .left .up h5,
+.down h5 {
+    display: inline-block;
+    margin-left: 10px;
+    text-transform: capitalize;
+    font-family: sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    color: grey;
+}
+
+.overlay .fotter .mids .scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 30px;
+    width: 90%;
+}
+
+.overlay .fotter .mids .scroll .icon {
+    height: 80%;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay .fotter .mids .scroll .icon .circle {
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 50%;
+    animation: scroll 1s ease-in-out 1s infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(300%);
+        opacity: 0.6;
+        scale: .4;
+    }
+
+}
+
+.mids .scroll h5 {
+    font-size: 12px;
+    font-family: sans-serif;
+    color: white;
+    text-transform: capitalize;
+
+}
+
+.overlay .fotter .right .down {
+    height: 20px;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.overlay .fotter .right .down h5 {
+    font-size: 10px;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    font-weight: 800;
+    color: white;
+}
+
+.overlay .fotter .right .down .player {
+    height: 30px;
+    width: 30px;
+}
+
+.fotter .right .down .player #play-pause {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    margin: 2.4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.fotter .right .down .player #play-pause .soundline1,
+.soundline2 {
+    height: 5px;
+    width: 90%;
+    margin: 0 auto 0 auto;
+}
+
+.wave1:before {
+    content: attr(data-text);
+    position: relative;
+    top: -30px;
+    color:black;
+    width: calc(100% +20px);
+    font-size: 25px;
+    font-weight: 900;
+    font-family: sans-serif;
+    text-decoration: wavy;
+    text-decoration-color: white;
+    text-decoration-line: underline;
+    animation: animate .9s linear infinite;
+}
+.wave2{
+    height: 2px;
+    width: 100%;
+    background-color: crimson;
+    position: relative;
+    top: -10%;
+    opacity: 1;
+}
+@keyframes animate {
+    0% {
+        left: -0%;
+    }
+
+    100% {
+        left: -30%;
+    }
+}
+
+#second {
+    min-height: 100vh;
+    width: 100%;
+    background: black;
+    position: relative;
+
+}
+
+#second .img {
+    height: 100vh;
+    width: 100%;
+    background-position: top;
+    background-size: cover;
+    animation: imgshow 25s linear 1s infinite ;
+}
+@keyframes imgshow{
+    0%{
+      background-image: url('https://dku1ozm2hibwi.cloudfront.net/seacat/Menu/menu-big/01-menu-big.webp');
+    }
+    20%{
+        background-image: url('https://dku1ozm2hibwi.cloudfront.net/seacat/Menu/menu-big/02-menu-big.webp');
+    }
+    40%{
+        background-image: url('https://dku1ozm2hibwi.cloudfront.net/seacat/Menu/menu-big/03-menu-big.webp');
+    }
+    60%{
+        background-image: url('https://dku1ozm2hibwi.cloudfront.net/seacat/Menu/menu-big/03-menu-big.webp');
+    }
+    80%{
+        background-image: url('https://dku1ozm2hibwi.cloudfront.net/seacat/Menu/menu-big/04-menu-big.webp');
+    }
+    100%{
+        background-image: url('https://dku1ozm2hibwi.cloudfront.net/seacat/Menu/menu-big/05-menu-big.webp');
+    }
+}
+#second .overlay2{
+    height: 100vh;
+    width: 100%;
+    background-color:rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;
+}
+ 
+    
+#second .overlay2 #navbar2{
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vh 5vw;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    pointer-events: none;
+}
+
+#second .overlay2 #navbar2 .left
+{
+  height: 100%;
+  width: 20%;
+
+}
+#second .overlay2 #navbar2 .left h2{
+    font-size: 10px;
+    font-family: sans-serif;
+    color:blue;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+#second .overlay#navbar2 .mid{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+#navbar2 .mid img
+{
+ 
+ height: 100%;
+ width: 50%;
+ /* margin-right: 12vw; */
+ object-fit: cover;
+ object-position: center;
+}
+#navbar2 .right
+{
+     width: 5%;
+    height: 100%;
+    border-radius: 50%;
+    /* background-color: white; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+}
+#navbar2 .right .icon{
+height: 100%;
+width: 100%;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 10px;
+position: absolute; 
+z-index: 9999999;
+}
+#navbar2 .right .icon i{
+    font-size:20px;
+    font-weight: 600;
+   color: blue;
+   border-radius: 50%;
+   background-color: black;
+}
+#navbar2 .right img{
+   /* height:; */
+   width: 100%;
+    border-radius: 50%;
+   object-fit: cover;
+   object-position: center;
+   transition: cubic-bezier(0.19, 1, 0.22, 1) .5s;
+   animation:antirotate 3s linear infinite backwards;
+
+}
+#navbar2 .right #secimg{
+    position: absolute;
+    width: 90%;
+    top: 2px;
+    animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+    from{
+       transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg) translate(5% , 0%);
+
+    }
+    
+}
+@keyframes antirotate {
+   from
+   {
+    transform: rotate(360deg);
+   }    
+    to{
+        transform: rotate(0deg) translate(5% ,0%);
+    }
+}
+
+#second #hot-point{
+    height: 30vh;
+    width: 35%;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+#second #hot-point .point
+{
+   height: 100%;
+   width: 30%;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+#second #hot-point .point img
+{
+    height: 60%;
+    width: 80%;
+    object-fit: cover;
+    object-position: center;
+}
+#second #hot-point .point .icon
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+#second #hot-point .point .icon i
+{
+    font-size: 30px;
+    font-weight: 500;
+    color:orange;
+}
+#second #hot-point .point .icon:hover i
+{
+    color: white;
+}
+
+#second #hot-point .text{
+     height: 100%;
+     width: 70%;
+}
+#second #hot-point .text h2
+{
+    text-transform: capitalize;
+    font-size:20px;
+    font-weight: 900;
+    font-family: sans-serif;
+    color: grey;
+    
+}
+#second #hot-point .text h1{
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight:700;
+    color: white;
+    text-transform: uppercase;
+}
+#third{
+   height: 110vh;
+   width: 100%;
+   position: relative;
+   background-color: black;
+}
+
+#third .imgs{
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+#third .imgs #img1{
+    height: 100%;
+    width: 200%;
+    object-position:center;
+    transition: all ease-in 0.5s;
+
+}
+ #third  .imgs #img2
+{
+    position: absolute;
+    right: 0%;
+    top: 0;
+    height: 100%;
+    width: 200%;
+    object-position: top;
+    transition: all ease-in 0.5s;
+    opacity: 0;
+
+}
+#third .imgs #dragerbox
+{
+height: 15vh;
+width: 40%;
+position:absolute;
+display: flex;
+align-items: center;
+justify-content: space-around;
+padding: 1vh;
+top: 85%;
+left: 50%;
+transform: translate(-50%,0%);
+z-index: 9999999999;
+}
+#third .imgs #dragerbox .line
+{
+    height: 2px;
+    width: 50%;
+    margin-right: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    
+}
+#dragerbox h2
+{
+    font-size: 16px;
+    color: #dadada;
+    opacity: 0.5;
+    font-family:sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0%);
+    opacity: 1;
+}
+
+
+#third .imgs #dragerbox .line .lightline{
+    height: 100%; 
+    width: 0%;
+    border-radius: 50%;
+    box-shadow:  0 0 5rem orange;
+    /* background-color: red; */
+    background:linear-gradient( 45deg ,orange ,red);
+    position: absolute;
+    top: 0;
+    left: 0%;
+    animation: lightline 1s  ease-in 1s infinite ;
+
+}
+@keyframes lightline {
+    from
+    {
+        transform: translateX(0%);
+    }
+    to
+    {
+     width: 100%;
+    }
+}
+ .dragme img
+{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 9999999;
+    animation:antirotate 3s linear infinite backwards;
+
+}
+.dragme i
+{
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    transform: translate(-50%,-50%);
+}
+#dragerbox .dragme
+{
+    height: 100%;
+    width: 20%;
+    border-radius: 50%;
+    /* overflow: hidden; */
+}
+#dragerbox .dragme .border{
+    height: 90%;
+    border: 5px dotted white;
+    width: 90%;
+    border-radius: 50%;
+    animation: rotate 5s linear infinite;
+
+}
+#dragerbox .cir{
+    position: absolute;
+    top: 20%;
+    right:0;
+    height: 40%;
+    width: 10%;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+#dragerbox .cir .smallcir
+{
+    height: 70%;
+    width: 70%;
+    border-radius: 50%;
+    border: 6px solid black;
+    background-color: orange;
+
+}
